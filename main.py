@@ -65,11 +65,6 @@ def main():
         # If it's an eleventh day, it's already formatted correctly. Skip.
         if d in eleventh_days:
             continue
-
-        day_before = d - datetime.timedelta(days=1)
-        # If it follows an eleventh day
-        if day_before in eleventh_days:
-            processed_dates[d] = d.strftime("%Y-%m-%d: 00:00-12:00")
         # Else, it's the default case for these special dates
         else:
             processed_dates[d] = d.strftime("%Y-%m-%d: 08:00-12:00")
